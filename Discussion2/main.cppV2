@@ -1,0 +1,29 @@
+#include <iostream>
+#include <stdio.h>
+#include "cars.hpp"
+
+using namespace std;
+using namespace ECE17;
+
+int main(int argc, const char *argv[])
+{
+    Car myCar("Toyota");
+      cout << "Brand of car: " << myCar.getMake() << "\n";
+
+    //change brand Tesla
+    myCar.setMake("Tesla");
+      cout << "Brand of car: " << myCar.getMake() << "\n";
+
+      cout << "What is the make of your car? \n";
+      string input;
+    cin >> input;
+    myCar.setMake(input);
+
+      cout << "Brand of car: " << myCar.getMake() << "\n";
+
+
+
+    //   cout << "Hello world!"
+    //           << "\n";
+    return 0;
+}

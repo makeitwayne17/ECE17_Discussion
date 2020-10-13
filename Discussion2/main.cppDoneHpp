@@ -1,0 +1,16 @@
+#include <iostream>
+#include <stdio.h>
+#include "cars.hpp"
+
+int main(int argc, const char *argv[])
+{
+    std::cout << "Hello world!"
+              << "\n";
+
+
+    ECE17::Car myCar("Ford");
+    std::cout << "My car's make is: " << myCar.getMake() << "\n";
+    myCar.setMake("Honda");
+    std::cout << "My car's make is: " << myCar.getMake() << "\n";
+    return 0;
+}
