@@ -1,0 +1,42 @@
+#include <iostream>
+#include <stdio.h>
+#include <string>
+#include <sstream>
+#include <fstream>
+
+using namespace std;
+
+int main(int argc, const char *argv[])
+{
+  //start with printing something simple
+  cout << "Hello world, welcome to our " << 3 << "rd Discussion\n\n\n";
+
+  //we can readin input
+  cout << "What day is today? ";
+  string day;
+  getline(cin, day);
+  cout << "What date is today? ";
+  int date;
+  cin >> date;
+  cout << "Today is " << day << ", the " << date << "th\n\n\n";
+
+  //lets use streams to read numbers
+  string numberString("1738");
+  stringstream theStream(numberString);
+  int num;
+  theStream >> num;
+  cout << "The number inside the numberString is: " << num << "\n\n\n";
+
+  //lets use streams to read a file
+  ifstream fileToRead("./toRead.txt");
+  string theLine;
+  cout << "Starting file read:\n\n\n";
+  while (getline(fileToRead, theLine))
+  {
+    cout << theLine << "\n";
+  }
+  fileToRead.close();
+  cout << "\nEnd file read\n\n\n";
+
+  return 0;
+}
