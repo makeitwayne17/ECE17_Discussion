@@ -13,6 +13,7 @@ namespace ECE17
         Car(string make);
         void setMake(string make);
         string getMake();
+        string getModels(string make);
 
     protected:
         string makeOfCar;
