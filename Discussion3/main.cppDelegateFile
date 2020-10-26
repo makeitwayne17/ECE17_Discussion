@@ -1,0 +1,19 @@
+#include <iostream>
+#include <stdio.h>
+#include "cars.hpp"
+
+using namespace std;
+using namespace ECE17;
+
+int main(int argc, const char *argv[])
+{
+    string inputString;
+    cout << "What brand are you interested in?\n";
+    getline(cin, inputString);
+
+    Car myCar;
+
+    cout << myCar.getModels(inputString);
+
+    return 0;
+}

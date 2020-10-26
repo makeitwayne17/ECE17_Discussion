@@ -1,0 +1,117 @@
+#include <iostream>
+#include <stdio.h>
+#include <string>
+#include <sstream>
+#include <fstream>
+
+using namespace std;
+
+int main(int argc, const char *argv[])
+{
+    //lets use streams to read a file
+    ifstream fileToRead("./randomString.txt");
+    string randomText;
+
+    cout << "Starting file read:\n\n\n";
+    getline(fileToRead, randomText);
+
+    //count of capital letters
+    int capital = 0;
+    for (char c : randomText)
+    {
+        if (c >= 'A' && c <= 'Z')
+        {
+            capital++;
+        }
+    }
+    cout << "There are " << capital << " capitalized letters\n";
+
+    //count of lower case letters
+    int lower = 0;
+    for (char c : randomText)
+    {
+        if (c >= 'a' && c <= 'z')
+        {
+            lower++;
+        }
+    }
+    cout << "There are " << lower << " lowercase letters\n";
+
+    //count of numbers
+    int numbers = 0;
+    for (char c : randomText)
+    {
+        if (c >= '0' && c <= '9')
+        {
+            numbers++;
+        }
+    }
+    cout << "There are " << numbers << " numbers\n";
+
+    //sum of all numbers
+    int sum = 0;
+    for (char c : randomText)
+    {
+        if (c >= '0' && c <= '9')
+        {
+            sum += int(c - '0');
+        }
+    }
+    cout << "Sum of all numbers are " << sum << "\n";
+
+    //count of any of these characters: '@#$%'
+    int symbol1 = 0;
+    for (char c : randomText)
+    {
+        if (c == '@' || c == '#' || c == '$' || c == '%')
+        {
+            symbol1++;
+        }
+    }
+    cout << "There are " << symbol1 << " of these characters: '@#$%'\n";
+
+    //count of '^'
+    int symbol2 = 0;
+    for (char c : randomText)
+    {
+        if (c == '^')
+        {
+            symbol2++;
+        }
+    }
+    cout << "There are " << symbol2 << " of '^'\n";
+
+    //count of '+'
+    int symbol3 = 0;
+    for (char c : randomText)
+    {
+        if (c == '+')
+        {
+            symbol3++;
+        }
+    }
+    cout << "There are " << symbol3 << " of '+'\n";
+
+    //count of '='
+    int symbol4 = 0;
+    for (char c : randomText)
+    {
+        if (c == '=')
+        {
+            symbol4++;
+        }
+    }
+    cout << "There are " << symbol4 << " of '='\n";
+
+    //count of '}'
+    int symbol5 = 0;
+    for (char c : randomText)
+    {
+        if (c == '}')
+        {
+            symbol5++;
+        }
+    }
+    cout << "There are " << symbol5 << " of '}'\n";
+    return 0;
+}
