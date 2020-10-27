@@ -1,0 +1,44 @@
+#include <iostream>
+#include <stdio.h>
+#include <string>
+#include <sstream>
+#include <fstream>
+#include "cars.hpp"
+
+using namespace std;
+using namespace ECE17;
+
+int main(int argc, const char *argv[])
+{
+    //create the first car
+    Car headCar("honda");
+    Car car1("toyota");
+    headCar.append(car1);
+    cout << headCar.getMake() << endl;
+    Car * tempCar;
+    tempCar = headCar.getNext();
+    cout << tempCar-> getMake() << endl;
+
+
+    //create mutiple chain of cars
+    Car firstCar("tesla");
+    Car secondCar("bmw");
+    firstCar.append(secondCar);
+    Car thirdCar("ford");
+    secondCar.append(thirdCar);
+    Car fourthCar("audi");
+    thirdCar.append(fourthCar);
+    Car fifthCar("mazda");
+    fourthCar.append(fifthCar);
+
+    Car * temp = &firstCar;
+    while(temp!= nullptr){
+        cout << temp -> getMake() << "\t";
+        temp = temp -> getNext();
+    }
+    cout << endl;
+
+
+
+    return 0;
+}

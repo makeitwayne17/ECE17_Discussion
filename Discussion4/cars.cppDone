@@ -1,0 +1,37 @@
+#include <iostream>
+#include <stdio.h>
+#include "cars.hpp"
+
+using namespace std;
+
+namespace ECE17
+{
+    Car::Car()
+    {
+        makeOfCar = "Unknown";
+        nextCar = nullptr;
+    }
+    Car::Car(string make)
+    {
+        makeOfCar = make;
+        nextCar = nullptr;
+    }
+    void Car::setMake(string make)
+    {
+        makeOfCar = make;
+    }
+    string Car::getMake()
+    {
+        return makeOfCar;
+    }
+
+
+    //adding more car function
+    void Car::append(Car &car){
+        this-> nextCar = &car;
+    }
+
+    Car* Car::getNext(){
+        return this->nextCar;
+    }
+} // namespace ECE17
