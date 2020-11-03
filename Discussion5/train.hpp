@@ -19,6 +19,7 @@ namespace ECE17
         //TODO: implement delete
         void operator delete(void *car)
         {
+            free(car);
         }
 
         string carName; //this is the value you want to save
@@ -32,10 +33,25 @@ namespace ECE17
         {
             root = nullptr;
         }
+        
 
         //TODO: implement destructor
         ~Train()
         {
+            Car *tempPtr = root;
+            Car *nextPtr = tempPtr->next;
+            while (tempPtr != nullptr)
+            {
+                nextPtr = tempPtr->next;
+                delete (tempPtr);
+                tempPtr = nextPtr;
+
+                // A -> B -> C
+                //tempPtr = A
+                //nextPtr = A -> nextPtr = B
+                //del(tempPtr) =del(A)
+                //tempPtr = B
+            }
         }
 
         string showTrain()
